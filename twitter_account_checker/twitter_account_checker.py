@@ -6,6 +6,7 @@ from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.ui import WebDriverWait
 import logging
+import os
 
 from secrets import secrets
 
@@ -15,8 +16,8 @@ twitter_url = "https://twitter.com/" + handle
 
 # configure logging
 logging.basicConfig(
-    filename='twitter_account_checker.log',
-    format='%(asctime)s | %(message)s',
+    filename=os.path.join(os.path.dirname(__file__), 'twitter_account_checker.log'),
+    format="%(asctime)s | %(message)s",
     level=logging.INFO
 )
 
